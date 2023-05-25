@@ -14,7 +14,7 @@ function App() {
       <Route path='/add' element={<h1>Add Product List</h1>}/>
       <Route path='/update' element={<h1>Update Product List</h1>}/>
       <Route path='/logout' element={<h1>Logout</h1>}/>
-      <Route path='/profile' element={<h1>Profile</h1>}/>
+      <Route path='/profile' element={<h1>Prof</h1>}/>
       
      </Routes>
      </BrowserRouter>
