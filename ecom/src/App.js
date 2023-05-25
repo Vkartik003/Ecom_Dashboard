@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
-import Nav from './Nav';
+import Nav from './components/Nav';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
-
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
       
      </Routes>
      </BrowserRouter>
+     <Footer/>
     </div>
   );
 }
