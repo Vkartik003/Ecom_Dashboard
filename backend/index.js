@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 // const { default: mongoose } = require('mongoose');
 require('./db/config');
 const User = require('./db/User');
@@ -6,6 +7,7 @@ const app = express();
 
 // using middleware  to control the data we send postman to nodejs 
 app.use(express.json());
+app.use(cors()); // we use it when we get error for requesting data from frontend API ... it gives error bcoz of security issues.. as request from two diff ports(front n backend) ..it blocks the request...it is a backend error and not frontend error..
 
 app.post('/register',async (req,res)=>{ // test it on postman 
     //use of async as the ---save--- method return promise 
