@@ -29,6 +29,26 @@
   color: #282c34b5;
 }
 
+.register{
+  margin-left: 30%;
+}
+.register input{
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  border: 2px solid saddlebrown;
+}
+.register button{
+  padding: 15px;
+  background-color: #61dafb;
+  margin-left: 120px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
