@@ -14,7 +14,7 @@ app.post('/register',async (req,res)=>{ // test it on postman
     // res.send("api calling...");
     //for inserting the data from postman to mongoDB..
     let user = new User(req.body);//User is the model here
-    let result = await user.save(); // it returs promise 
+    let result = await user.save(); // it returns promise 
     res.send(result);//to get the data we send through postman... it will be useful in react 
 
 })
