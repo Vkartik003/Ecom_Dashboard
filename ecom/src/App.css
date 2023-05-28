@@ -68,8 +68,16 @@
   margin-top: 20px;
   cursor: pointer;
 }
-
-
+.nav-right{
+  text-align: right;
+}
+.logo{
+  float: left;
+  width: 55px;
+  margin-top: 9px;
+  margin-left: 20px;
+  border-radius: 60%;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

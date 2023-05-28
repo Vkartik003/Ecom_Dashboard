@@ -28,6 +28,7 @@ const Login = () => {
     console.log(result);
     if(result.name){
         localStorage.setItem('user',JSON.stringify(result));
+        alert('Login Succesfully');
         navigate('/products');
     }else{
         alert("please enter correct details")

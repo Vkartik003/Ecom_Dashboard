@@ -53,7 +53,8 @@ const SignUp = ()=>{
     useEffect(() => {
         const auth = localStorage.getItem('user')
         if (auth){
-         navigate("/products");
+
+            navigate("/products");
         }
     })
     return(
