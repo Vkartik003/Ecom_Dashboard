@@ -49,6 +49,26 @@
 }
 
 
+.login-head{
+  margin-left: 30%;
+}
+.login-head input{
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin-left: 10x;
+  margin-bottom: 20px;
+  border: 2px solid saddlebrown;
+}
+.login-head button{
+  padding: 15px;
+  /* align-items: center; */
+  margin-left: 13%;
+  background-color: hsl(193, 95%, 68%);
+  margin-top: 20px;
+  cursor: pointer;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
