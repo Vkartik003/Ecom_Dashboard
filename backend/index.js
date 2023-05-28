@@ -29,10 +29,10 @@ app.post("/login", async (req, res) => {
     if (user) { // if user is correct then send resp or login the user
       res.send(user);
     } else {
-      res.send("user not found");
+      res.status(404).send({ error: 'User not found' });
     }
   } else {
-    res.send("user not found");
+    res.status(404).send({ error: 'User not found' });
   }
 });
 
