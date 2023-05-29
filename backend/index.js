@@ -43,6 +43,19 @@ app.post('/products',async (req,res)=>{
   let result = await product.save();
   res.send(result);
 })
+
+//list product 
+app.get('/pro',async (req,res)=>{
+  let prod = await Product.find();
+  if(prod.length > 0)
+  {
+    res.send(prod)
+  }else{
+    res.send("No products found");
+  }
+
+})
+
 // const mongoose = require('mongoose');
 // const connectDB = async()=>{
 //     mongoose.connect('mongodb://localhost:27017/e-comm');
