@@ -29,10 +29,10 @@
   color: #282c34b5;
 }
 
-.register{
+.register, .addproduct{
   margin-left: 30%;
 }
-.register input{
+.register ,.addproduct  input{
   display: block;
   width: 300px;
   padding: 10px;
@@ -40,7 +40,7 @@
   margin-bottom: 20px;
   border: 2px solid saddlebrown;
 }
-.register button{
+.register, .addproduct button{
   padding: 15px;
   background-color: #61dafb;
   margin-left: 120px;

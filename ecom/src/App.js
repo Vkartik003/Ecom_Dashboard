@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import SignUp from './components/SignUp';
 import PrivateComponent from './components/PrivateComponent';
 import Login from './components/Login';
+import AddProduct from './components/AddProduct';
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,7 @@ function App() {
      <Routes>
      <Route element={<PrivateComponent/>}>
       <Route path='/products' element={<h1>Product List</h1>}/>
-      <Route path='/add' element={<h1>Add Product List</h1>}/>
+      <Route path='/add' element={<AddProduct/>}/>
       <Route path='/update' element={<h1>Update Product List</h1>}/>
       <Route path='/logout' element={<h1>Logout</h1>}/>
       <Route path='/profile' element={<h1>Prof</h1>}/>
