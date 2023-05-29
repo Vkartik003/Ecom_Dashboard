@@ -8,7 +8,19 @@ const AddProduct = () =>{
     const [company,setCompany] = useState('');
     const handleProduct = async () =>{
         console.log(name,price,category,company);
-        
+        const realId = JSON.parse(localStorage.getItem('user'));
+        const userId = realId._id;
+        console.log("userID : " ,userId);
+        let result = await fetch('http://localhost:5000/products',{
+            method:'POST',
+            body:JSON.stringify({name,price,category,company,userId}),
+            headers:{
+                'Content-Type':'application/json',
+                // 'Accept':'application/json'
+            },
+        });
+        result = await result.json();
+        console.log(result);
         setTimeout(()=>{
             setName('');
             setPrice('');

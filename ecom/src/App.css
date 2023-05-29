@@ -29,10 +29,10 @@
   color: #282c34b5;
 }
 
-.register, .addproduct{
+.register {
   margin-left: 30%;
 }
-.register ,.addproduct  input{
+.register input{
   display: block;
   width: 300px;
   padding: 10px;
@@ -40,14 +40,31 @@
   margin-bottom: 20px;
   border: 2px solid saddlebrown;
 }
-.register, .addproduct button{
+.register button{
   padding: 15px;
   background-color: #61dafb;
   margin-left: 120px;
   margin-top: 20px;
   cursor: pointer;
 }
-
+.addproduct {
+  margin-left: 30%;
+}
+.addproduct input{
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  border: 2px solid saddlebrown;
+}
+.addproduct button{
+  padding: 15px;
+  background-color: #61dafb;
+  margin-left: 120px;
+  margin-top: 20px;
+  cursor: pointer;
+}
 
 .login-head{
   margin-left: 30%;
