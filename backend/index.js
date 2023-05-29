@@ -3,6 +3,7 @@ const cors = require("cors");
 // const { default: mongoose } = require('mongoose');
 require("./db/config");
 const User = require("./db/User");
+const Product = require('./db/Products');
 const app = express();
 
 // using middleware  to control the data we send postman to nodejs
@@ -36,6 +37,12 @@ app.post("/login", async (req, res) => {
   }
 });
 
+//add product
+app.post('/products',async (req,res)=>{
+  let product = new Product(req.body);
+  let result = await product.save();
+  res.send(result);
+})
 // const mongoose = require('mongoose');
 // const connectDB = async()=>{
 //     mongoose.connect('mongodb://localhost:27017/e-comm');
