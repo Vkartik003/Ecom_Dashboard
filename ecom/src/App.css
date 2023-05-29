@@ -95,6 +95,13 @@
   margin-left: 20px;
   border-radius: 60%;
 }
+
+.invalid {
+  display: block;
+  margin-top: -20px;
+  margin-left: 20px;
+  color: red;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
