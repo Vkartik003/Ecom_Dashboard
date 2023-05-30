@@ -136,6 +136,21 @@
 /* .prod_list ul li {
   margin: 3px;
 } */
+
+.search_prod{
+  width: 340px;
+  padding-left: 20px;
+  margin: 10px;
+  border: 2px solid saddlebrown;
+  height: 30px;
+}
+
+
+
+
+
+
+/*  */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

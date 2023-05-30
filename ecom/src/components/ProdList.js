@@ -29,9 +29,26 @@ const ProdList = () => {
     //   console.log('updated');
     // }
     console.log("Products list : ",prod);
+
+    const searchprod = async(event)=>{
+      let key = (event.target.value);
+      if(key)
+      {
+        let result = await fetch(`http://localhost:5000/search/${key}`);
+        result = await result.json();
+        if(result)
+        {
+          setProd(result);
+        }
+
+      }else{
+        getProd();
+      }
+    }
   return (
     <div className="prod_list" style={{ overflowY: 'scroll', maxHeight: '500px' }}>
       <h1>ProdList</h1>
+      <input type="text" placeholder="Search Products..." className="search_prod" onChange={searchprod}/>
       <ul>
         <li style={{ fontWeight: 'bold' }}>S.No</li>
         <li style={{ fontWeight: 'bold' }}>Name</li>
@@ -43,7 +60,7 @@ const ProdList = () => {
       </ul>
       {
         // eslint-disable-next-line array-callback-return
-        prod && prod.map((item,index)=> 
+        prod.length>0 ? prod.map((item,index)=> 
         <ul key={item._id}>
             <li>{index+1}</li>
             <li>{item.name}</li>
@@ -73,7 +90,8 @@ Using the correct approach ensures that the deleteProduct function is called onl
 
 
  */}
-        </ul>)
+        </ul>):
+        <h1>NO RESULT FOUND</h1>
       }
     </div>
   );
