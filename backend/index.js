@@ -78,6 +78,23 @@ app.put("/product/:id",async(req,res)=>{
   res.send(result);
 })
 
+//search pro
+app.get("/search/:key",async(req,res)=>{
+  let result = await Product.find({
+    $or:[
+      {name : {$regex:req.params.key}},
+      {price:{$regex:req.params.key}},
+      {company:{$regex:req.params.key}},
+      {category:{$regex:req.params.key}},
+      
+    ]
+  })
+  res.send(result);
+})
+//The search query is constructed using the $or operator, which allows multiple conditions to be specified. In this case, the conditions are based on the provided keyword. The $regex operator is used for pattern matching, allowing case-insensitive partial matching.
+
+
+
 // const mongoose = require('mongoose');
 // const connectDB = async()=>{
 //     mongoose.connect('mongodb://localhost:27017/e-comm');
