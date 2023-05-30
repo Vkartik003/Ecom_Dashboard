@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom'
 
 const ProdList = () => {
     const [prod,setProd] = useState([]);
@@ -24,6 +25,9 @@ const ProdList = () => {
       console.log("deleted");
 
     }
+    // const handleUpdate = () =>{
+    //   console.log('updated');
+    // }
     console.log("Products list : ",prod);
   return (
     <div className="prod_list" style={{ overflowY: 'scroll', maxHeight: '500px' }}>
@@ -46,7 +50,11 @@ const ProdList = () => {
             <li>{item.price}</li>
             <li>{item.category}</li>
             <li>{item.company}</li>
-            <li><button onClick={()=>handleDelete(item._id,item.name)}>Delete</button></li>
+            <li>
+              <button onClick={()=>handleDelete(item._id,item.name)}>Delete</button>
+              <button><Link to={"/update/"+item._id} className="link-style">Update</Link></button>
+            </li>
+            
             {/* In React, when you use onClick={deleteProduct(item._id)}, it means you are immediately invoking the deleteProduct function during the rendering phase instead of assigning it as an event handler.
 
 To prevent the function from being called immediately and instead be executed when the button is clicked, you need to wrap the deleteProduct function inside an arrow function or another function call.
