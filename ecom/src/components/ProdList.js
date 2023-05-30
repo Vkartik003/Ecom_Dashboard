@@ -47,6 +47,24 @@ const ProdList = () => {
             <li>{item.category}</li>
             <li>{item.company}</li>
             <li><button onClick={()=>handleDelete(item._id,item.name)}>Delete</button></li>
+            {/* In React, when you use onClick={deleteProduct(item._id)}, it means you are immediately invoking the deleteProduct function during the rendering phase instead of assigning it as an event handler.
+
+To prevent the function from being called immediately and instead be executed when the button is clicked, you need to wrap the deleteProduct function inside an arrow function or another function call.
+
+Here's the difference between the two approaches:
+
+Incorrect Approach: onClick={deleteProduct(item._id)}
+
+In this approach, the deleteProduct function is immediately invoked during the rendering phase, and the return value (which is expected to be a function) is assigned as the event handler. This results in the function being called automatically.
+Correct Approach: onClick={() => deleteProduct(item._id)}
+
+In this approach, an arrow function is used as a wrapper around the deleteProduct function. The arrow function acts as the event handler and, when invoked, calls the deleteProduct function with the specified item._id. This way, the function is not executed during the rendering phase but is instead executed when the button is clicked.
+Using the correct approach ensures that the deleteProduct function is called only when the button is clicked.
+
+
+
+
+ */}
         </ul>)
       }
     </div>
