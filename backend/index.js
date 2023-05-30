@@ -72,6 +72,11 @@ app.get("/uproduct/:id",async(req,res)=>{
     res.send({result : "No product found"});
   }
   })
+//update api
+app.put("/product/:id",async(req,res)=>{
+  let result = await Product.updateOne({_id:req.params.id},{$set:req.body});
+  res.send(result);
+})
 
 // const mongoose = require('mongoose');
 // const connectDB = async()=>{
