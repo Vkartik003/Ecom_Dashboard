@@ -51,7 +51,7 @@ app.get('/pro',async (req,res)=>{
   {
     res.send(prod)
   }else{
-    res.send("No products found");
+    res.send({result : "No products found"});
   }
 
 })

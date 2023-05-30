@@ -25,6 +25,7 @@ const AddProduct = () =>{
             },
         });
         result = await result.json();
+        alert("Product added success");
         console.log(result);
         setTimeout(()=>{
             setName('');

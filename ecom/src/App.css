@@ -111,13 +111,24 @@
   padding: 10px;
   /* margin-trim: 1px; */
   /* margin-left: 2px; */
-  border: 1px solid saddlebrown;
+  border: 2px solid saddlebrown;
   width: 150px;
+}
+.prod_list ul li button{
+  /* padding: 1px; */
+  border: 1px solid saddlebrown;
+  /* width: 50%; */
+  /* display: inline-block; */
+  margin: 0px;
+
 }
 .prod_list ul{
   /* font-weight:bold; */
   margin: 0px;
 }
+/* .prod_list ul li {
+  margin: 3px;
+} */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
