@@ -56,6 +56,12 @@ app.get('/pro',async (req,res)=>{
 
 })
 
+//delete product
+app.delete('/product/:id',async (req,res)=>{
+  const result = await Product.deleteOne({_id:req.params.id});
+  res.send(result);
+})
+
 // const mongoose = require('mongoose');
 // const connectDB = async()=>{
 //     mongoose.connect('mongodb://localhost:27017/e-comm');
