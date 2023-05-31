@@ -5,6 +5,9 @@ require("./db/config");
 const User = require("./db/User");
 const Product = require('./db/Products');
 const app = express();
+const jwt = require('jsonwebtoken');
+const { token } = require("morgan");
+const jwtKey = 'e-comm';
 
 // using middleware  to control the data we send postman to nodejs
 app.use(express.json());
@@ -19,16 +22,29 @@ app.post("/register", async (req, res) => {
   let result = await user.save(); // it returns promise
   result = result.toObject(); // 
   delete result.password;
+  jwt.sign({result},jwtKey,{expiresIn:'2h'},(err,token)=>{
+    if(err)
+    {
+      res.send({result:"something went wrong,try again after sometime"});
+    }
+    res.send({result,auth:token});
   //The reason for converting the result to an object is likely to manipulate or remove certain properties before sending the response back. In this case, it appears that the intention is to remove the password property from the result object before sending it as a response.
 // By converting the result to an object using toObject(), you can modify or delete properties on the object because toObject() returns a plain JavaScript object that is not directly connected to the underlying Mongoose document. This allows you to safely modify the object without affecting the original Mongoose document or triggering unintended side effects
-  res.send(result); //to get the data we send through postman... it will be useful in react
-});
+ // res.send(result); //to get the data we send through postman... it will be useful in react
+})});
 
 app.post("/login", async (req, res) => {
   if (req.body.password && req.body.email) { // here we are checking if user has entered correct password n email both then login 
     let user = await User.findOne(req.body).select("-password"); // we are finding that user with req.body and saving it in variable 
     if (user) { // if user is correct then send resp or login the user
-      res.send(user);
+      jwt.sign({user},jwtKey,{expiresIn:'2h'},(err,token)=>{
+        if(err)
+        {
+          res.send({result:"something went wrong,try again after sometime"});
+        }
+        res.send({user,auth:token});
+      })
+      
     } else {
       res.status(404).send({ error: 'User not found' });
     }

@@ -40,7 +40,6 @@ const ProdList = () => {
         {
           setProd(result);
         }
-
       }else{
         getProd();
       }
