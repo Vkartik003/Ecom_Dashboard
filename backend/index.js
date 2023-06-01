@@ -25,7 +25,7 @@ app.post("/register", async (req, res) => {
   jwt.sign({result},jwtKey,{expiresIn:'2h'},(err,token)=>{
     if(err)
     {
-      res.send({result:"something went wrong,try again after sometime"});
+      res.send({result:"something went wrong,try after sometime"});
     }
     res.send({result,auth:token});
   //The reason for converting the result to an object is likely to manipulate or remove certain properties before sending the response back. In this case, it appears that the intention is to remove the password property from the result object before sending it as a response.
